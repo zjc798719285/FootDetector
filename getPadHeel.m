@@ -17,7 +17,7 @@ else
     pad_ind = indMaxVal;
 end
 pad_up=pad_ind-round(h*rect(4)*0.12);
-pad_down=pad_ind+round(h*rect(4)*0.13);
+pad_down=pad_ind+round(h*rect(4)*0.8);
 heel_down=round((rect(1)+rect(4))*h);
 heel_up=heel_down-round(rect(4)*h*0.2);
 end
