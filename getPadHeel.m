@@ -1,4 +1,4 @@
-function [pad_up,pad_down,heel_up,heel_down]=getPadHeel_v2(img)
+function [pad_up,pad_down,heel_up,heel_down]=getPadHeel(img)
 [h,~,~]=size(img);
 [rect,rect_img]=foot_detector(img);
 PadImg=img(1:round(h*(rect(1)+rect(4)/2)),:);

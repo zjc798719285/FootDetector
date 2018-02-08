@@ -1,4 +1,4 @@
-function [draw_img,pad_left,pad_right,heel_left,heel_right]=foot_bbox_v2(img)
+function [draw_img,pad_left,pad_right,heel_left,heel_right]=foot_bbox(img)
 [rect,rect_img]=foot_detector(img);
 img=rectFilter(img,rect);
 [pad_up,pad_down,heel_up,heel_down]=getPadHeel_v2(img);
