@@ -1,9 +1,9 @@
 function [draw_img,FP]=FootPointSearch(img)
 %FP:pad_left;heel_left;pad_right;heel_right
 [~,rect,pad_left,pad_right,heel_left,heel_right]=foot_bbox(img);
-UPOINT=getVertex(img,rect);
+UPOI=getVertex(img,rect);
 [FP,hashTab]=convexLine(pad_left, heel_left, pad_right, heel_right);
-FP=[FP;UPOINT];
+FP=[FP;]
 draw_img=drawConvexLine(img,FP);
 point=[pad_left; heel_left; pad_right; heel_right];
 pointSet=point(hashTab,:);

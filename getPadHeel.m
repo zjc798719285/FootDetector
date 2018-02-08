@@ -12,10 +12,10 @@ ImgPadRight=img(1:round(h*(rect(1)+rect(4)/2)),...
                round(w*(rect(2)+rect(3)/2)):end);
 pad_left_ind=getImgSecPeak(ImgPadLeft);
 pad_right_ind=getImgSecPeak(ImgPadRight);
-pad_up_left=pad_left_ind-round(h*rect(4)*0.12);
-pad_down_left=pad_left_ind+round(h*rect(4)*0.13);
-pad_up_right=pad_right_ind-round(h*rect(4)*0.12);
-pad_down_right=pad_right_ind+round(h*rect(4)*0.13);
+pad_up_left=pad_left_ind-round(h*rect(4)*0.13);
+pad_down_left=pad_left_ind+round(h*rect(4)*0.08);
+pad_up_right=pad_right_ind-round(h*rect(4)*0.13);
+pad_down_right=pad_right_ind+round(h*rect(4)*0.08);
 heel_down=round((rect(1)+rect(4))*h);
 heel_up=heel_down-round(rect(4)*h*0.2);
 end

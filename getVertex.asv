@@ -1,0 +1,13 @@
+function point=getVertex(img)
+[h,w,c]=size(img);
+[rect,rect_img]=foot_detector(img);
+line=img(round(rect(1)*h)+1:round(rect(1)*h)+10,:);
+for i=1:10
+    for j=1:length(line)
+        
+    end
+end
+
+
+
+end
