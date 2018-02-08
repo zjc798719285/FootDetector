@@ -1,7 +1,7 @@
 function [draw_img,pad_left,pad_right,heel_left,heel_right]=foot_bbox(img)
 [rect,rect_img]=foot_detector(img);
 img=rectFilter(img,rect);
-[pad_up,pad_down,heel_up,heel_down]=getPadHeel_v2(img);
+[pad_up,pad_down,heel_up,heel_down]=getPadHeel(img);
 pad=img(pad_up:pad_down,:);
 heel=img(heel_up:heel_down,:);
 [pad_left,pad_right]=boundry_search(pad,pad_up);
