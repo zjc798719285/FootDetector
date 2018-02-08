@@ -1,6 +1,6 @@
 function [draw_img,FP]=FootPointSearch(img)
 %FP:pad_left;heel_left;pad_right;heel_right
-[draw_img,pad_left,pad_right,heel_left,heel_right]=foot_bbox_v2(img);
+[draw_img,pad_left,pad_right,heel_left,heel_right]=foot_bbox(img);
 [FP,hashTab]=convexLine(pad_left, heel_left, pad_right, heel_right);
 draw_img=drawConvexLine(draw_img,FP);
 point=[pad_left; heel_left; pad_right; heel_right];
