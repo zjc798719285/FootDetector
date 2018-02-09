@@ -17,7 +17,7 @@ How to use it?
         draw_img: The rectangle have been draw on img. 
         
  ![https://github.com/zjc798719285/FootDetector/raw/master/testImg.jpg]
- ![https://github.com/zjc798719285/FootDetector/raw/master/rectImg.jpg]
+ ![https://github.com/zjc798719285/FootDetector/raw/master/rectImage.jpg]
 
   
  
