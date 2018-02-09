@@ -8,5 +8,7 @@ How to use it?
         img:The image you want to process.
         FP: The  coordinate of keypoints which is an array shaped 6*2. 
         draw_img: The keypoints have been draw on img. In draw_img you can see the keypoints on original image.
+        ![https://github.com/zjc798719285/FootDetector/raw/master/testImg.jpg]
+    
   
  
