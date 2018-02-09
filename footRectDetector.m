@@ -1,4 +1,4 @@
-function [label,x]=foot_detector(x)
+function [label,x]=footRectDetector(x)
 [~,~,channel]=size(x);
 if channel>1
     x=x(:,:,1);

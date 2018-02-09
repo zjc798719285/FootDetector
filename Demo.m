@@ -8,6 +8,6 @@ for i=3:length(file_name)
    file_path=[test_data, file_name(i).name];
    file_out_path=[test_result, file_name(i).name];
    img=imread(file_path);
-   [draw_img,FP]=FootPointSearch(img);
+   [draw_img,FP]=footDetector(img);
    imwrite(draw_img, file_out_path); 
 end

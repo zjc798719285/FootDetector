@@ -1,8 +1,7 @@
 function draw_img=drawConvexLine(img,p)
-[h,w,c]=size(img);
+[h,w,~]=size(img);
 pl=p(1,:);hl=p(2,:);
 pr=p(3,:);hr=p(4,:);
-up=p(5,:);
 for x=1:h
     yl=(hl(2)-pl(2))/(hl(1)-pl(1))*(x-pl(1))+pl(2);
     yr=(hr(2)-pr(2))/(hr(1)-pr(1))*(x-pr(1))+pr(2);
@@ -19,10 +18,4 @@ img(p(5,1)-5:p(5,1)+5,p(5,2)-5:p(5,2)+5)=255;
 img(p(6,1)-5:p(6,1)+5,p(6,2)-5:p(6,2)+5)=255;
 img(p(5,1),:)=255;
 draw_img=img;
-% imshow(draw_img)
-% hold on
-% plot(pl(2),pl(1),'ro')
-% plot(hl(2),hl(1),'ro')
-% plot(pr(2),pr(1),'ro')
-% plot(hr(2),hr(1),'ro')
 end

@@ -3,19 +3,22 @@ function [pad_up_left,...
           pad_up_right,...
           pad_down_right,...
           heel_up,...
-          heel_down]=getPadHeel(img)
+          heel_down]=getPadHeelRegion(img)
+PAD_UP_SCALE=0.13;
+PAD_DOWN_SCALE=0.08;
+HEEL_UP_SCALE=0.2;
 [h,w,~]=size(img);
-[rect,~]=foot_detector(img);
+[rect,~]=footRectDetector(img);
 ImgPadLeft=img(1:round(h*(rect(1)+rect(4)/2)),...
                1:round(w*(rect(2)+rect(3)/2)));
 ImgPadRight=img(1:round(h*(rect(1)+rect(4)/2)),...
                round(w*(rect(2)+rect(3)/2)):end);
 pad_left_ind=getImgSecPeak(ImgPadLeft);
 pad_right_ind=getImgSecPeak(ImgPadRight);
-pad_up_left=pad_left_ind-round(h*rect(4)*0.13);
-pad_down_left=pad_left_ind+round(h*rect(4)*0.08);
-pad_up_right=pad_right_ind-round(h*rect(4)*0.13);
-pad_down_right=pad_right_ind+round(h*rect(4)*0.08);
+pad_up_left=pad_left_ind-round(h*rect(4)*PAD_UP_SCALE);
+pad_down_left=pad_left_ind+round(h*rect(4)*PAD_DOWN_SCALE);
+pad_up_right=pad_right_ind-round(h*rect(4)*PAD_UP_SCALE);
+pad_down_right=pad_right_ind+round(h*rect(4)*PAD_DOWN_SCALE);
 heel_down=round((rect(1)+rect(4))*h);
-heel_up=heel_down-round(rect(4)*h*0.2);
+heel_up=heel_down-round(rect(4)*h*HEEL_UP_SCALE);
 end

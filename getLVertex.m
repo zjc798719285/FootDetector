@@ -1,6 +1,7 @@
 function [LowPoint, line]=getLVertex(img,FP)
 line=[];
 eps=1e-6;
+PI=3.1415926;
 [h,~,~]=size(img);
 thresh=get_thresh(img);
 p1=[FP(1,2),h-FP(1,1)];
@@ -33,7 +34,7 @@ for i=1:length(line)
 end
     function angle = get_angle(a)
         if atan(a)<0
-            angle = 3.1415926+atan(a);
+            angle = PI+atan(a);
         else
             angle = atan(a);
         end
