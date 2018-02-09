@@ -9,14 +9,15 @@ How to use it?
         img:The image you want to process.
         FP: The  coordinate of keypoints which is an array shaped 6*2. 
         draw_img: The keypoints have been draw on img. In draw_img you can see the keypoints on original image 
-       ![https://github.com/zjc798719285/FootDetector/raw/master/testImg.jpg]
-        
+     
         If you just want to detect barefoot in one image, you can use 'footRectDetector.m'.
         [rect,draw_img]=footRectDetector(img)
         img: The image you want to process.
         rect: The coordinate of rectangle which is an array shaped [x,y,w,h]. 
         draw_img: The rectangle have been draw on img. 
-       ![https://github.com/zjc798719285/FootDetector/raw/master/rectImg.jpg]
+        
+ ![https://github.com/zjc798719285/FootDetector/raw/master/testImg.jpg]
+ ![https://github.com/zjc798719285/FootDetector/raw/master/rectImg.jpg]
 
   
  
