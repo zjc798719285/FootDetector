@@ -1,17 +1,17 @@
-function [label,x]=footRectDetector(x)
-[~,~,channel]=size(x);
+function [rect,draw_img]=footRectDetector(img)
+[~,~,channel]=size(img);
 if channel>1
-    x=x(:,:,1);
+    img=img(:,:,1);
 end
-x=boundary_prop(x);
-[img_x,img_y]=size(x);
-x1=x(1:fix(img_x/2),:);
-x2=x(fix(img_x/2):end,:);
+img=boundary_prop(img);
+[img_x,img_y]=size(img);
+x1=img(1:fix(img_x/2),:);
+x2=img(fix(img_x/2):end,:);
 th1 = get_thresh(x1);
 th2 = get_thresh(x2);
 th_b = max(th1, th2);
 th_r = min(th1, th2);
-max_col = max(x); max_row = max(x');
+max_col = max(img); max_row = max(img');
 max_col_b = max2b(max_col,th_b);
 max_row_b = max2b(max_row,th_r);
 key_col = search_point(max_col_b);
@@ -21,8 +21,8 @@ w = double((key_col(end)-key_col(1))/img_y);
 h = double((key_row(end)-key_row(1))/img_x);
 sc = double(key_col(1)/img_y);
 sr = double(key_row(1)/img_x);
-label = [sr,sc,w,h];
-x = draw_rect(x, label);
+rect = [sr,sc,w,h];
+draw_img = draw_rect(img, rect);
     function img = draw_rect(img,label)
         [r,c,l]=size(img);
         p_col = round(c*label(2));
