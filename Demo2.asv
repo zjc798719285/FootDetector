@@ -1,0 +1,20 @@
+clc
+clear
+source_dir='E:\PROJECT\Foot_Height\data_Foot_Height\barefoot_standard\RCNN\V1.0.0.0\';
+output_dir='E:\PROJECT\Foot_Height\data_Foot_Height\barefoot_standard\RCNN\KeyPoints\';
+doc_name_struct=dir(source_dir);
+file_path=[];file_output=[];
+for i=1:1:length(doc_name_struct)
+    i
+    doc_name=doc_name_struct(i).name;
+    file_name_struct=dir([source_dir,doc_name,'\*jpg']);
+    file_name=file_fliter(file_name_struct);
+    mkdir([output_dir,doc_name])
+    for j=1:length(file_name)
+        file_path=[source_dir,doc_name,'\',file_name{j}];
+        img=imread(file_path);
+        file_out_path=[output_dir,doc_name,'\',file_name{j}];
+        [segpoint,img,threshold]=crop_foot_seg(img);
+  
+    end
+end
