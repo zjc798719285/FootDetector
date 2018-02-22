@@ -1,7 +1,7 @@
-function [draw_img,lines]=drawConvexLine(img,p)
-[h,w,~]=size(img);
+function draw_img=drawConvexLine(img,p)
 lines={};
-lineRight=zeros(h,2);lineLeft=zeros(h,2);
+lineRight=[];lineLeft=[];
+[h,w,~]=size(img);
 pl=p(1,:);hl=p(2,:);
 pr=p(3,:);hr=p(4,:);
 for x=1:h
@@ -11,10 +11,8 @@ for x=1:h
     yr=max(round(yr),1);yr=min(yr,w);
     img(x,yl)=255;
     img(x,yr)=255;
-    lineRight(x,1)=x;lineRight(x,2)=yr;
-    lineLeft(x,1)=x;lineLeft(x,2)=yl;
+    lineRight(x,i)
 end
-lines{1}=lineLeft;lines{2}=lineRight;
 img(p(1,1)-5:p(1,1)+5,p(1,2)-5:p(1,2)+5)=255;
 img(p(2,1)-5:p(2,1)+5,p(2,2)-5:p(2,2)+5)=255;
 img(p(3,1)-5:p(3,1)+5,p(3,2)-5:p(3,2)+5)=255;
