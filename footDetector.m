@@ -1,4 +1,4 @@
-function [draw_img,FP,lines]=footDetector(img)
+function [draw_img,FP,lines,rect]=footDetector(img)
 %FP:pad_left;heel_left;pad_right;heel_right
 [~,rect,pad_left,pad_right,heel_left,heel_right]=getFootBoundary(img);
 UPOINT=getVertex(img,rect);

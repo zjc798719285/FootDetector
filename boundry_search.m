@@ -1,4 +1,4 @@
-function [left, right]=boundry_search_v2(img, pos_h)
+function [left, right]=boundry_search(img, pos_h)
 thresh=get_thresh(img);
 bwImg=im2bw(img, thresh/255);
 bwImg=bwareaopen(bwImg, 200);

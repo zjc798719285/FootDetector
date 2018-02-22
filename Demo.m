@@ -8,10 +8,14 @@ for i=3:length(file_name)
    file_path=[test_data, file_name(i).name];
    file_out_path=[test_result, file_name(i).name];
    img=imread(file_path);
-   [draw_img,FP,lines]=footDetector(img);
-   ISCUT=isCutFoot(img,lines);
-   if ISCUT == 1
+   try
+    [draw_img,FP,lines,rect]=footDetector(img);
+    ISCUT=isCutFoot(img,lines,rect);
+    if ISCUT == 1
        draw_img(1:30,1:30)=255;
+    end
+    imwrite(draw_img, file_out_path);
+   catch
+      draw_img(1:30,1:30)=255;
    end
-   imwrite(draw_img, file_out_path); 
 end

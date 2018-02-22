@@ -3,7 +3,7 @@ function [rect,draw_img]=footRectDetector(img)
 if channel>1
     img=img(:,:,1);
 end
-img=boundary_prop(img);
+img=boundary_prop(img,0.07);
 [img_x,img_y]=size(img);
 x1=img(1:fix(img_x/2),:);
 x2=img(fix(img_x/2):end,:);

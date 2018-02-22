@@ -1,7 +1,8 @@
-function ISCUT=isCutFoot(img,lines)
+function ISCUT=isCutFoot(img,lines,rect)
 CUT_THRESHOLD=300;
-img=boundary_prop(img);
+img=boundary_prop(img,0.02);
 filtImg=convexFilter(img,lines);
+filtImg=rectFilter(filtImg,rect);
 cutFoot=img-filtImg;
 thresh=get_thresh(img);
 cutFootBw=im2bw(cutFoot,thresh/255);
